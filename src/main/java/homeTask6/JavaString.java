@@ -23,6 +23,8 @@ public class JavaString {
         System.out.println("Введите фразу со словом 'new': ");
         String frNew = in.nextLine();
         boolean isContain1 = frNew.contains("new");
+        
+        //fhgjkh,kj,k
 
         //Task #3 работает но немного не так
         //String str = "11 34 3 45 23 5 67";

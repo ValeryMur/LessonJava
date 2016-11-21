@@ -2,10 +2,7 @@ package lesson13;
 
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -29,6 +26,32 @@ public class SortList {
         System.out.println("How many 1: "+ Collections.frequency(arrayList, "1"));
         System.out.println("How many 2: "+ Collections.frequency(arrayList, "2"));
         System.out.println("How many 3: "+ Collections.frequency(arrayList, "3"));
+
+    }
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("1");
+        list.add("2");
+        list.add("2");
+        list.add("2");
+        list.add("1");
+        list.add("3");
+        list.add("3");
+
+        Map<String,Integer> resultMap = new HashMap<>();
+
+        for (String elem:list){
+            Integer count = resultMap.get(elem);
+            if (count==null){
+                resultMap.put(elem, 1);
+            } else {
+                resultMap.remove(count);
+                resultMap.put(elem,++count);
+            }
+        }
+
+        System.out.println(resultMap);
 
     }
 }

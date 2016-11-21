@@ -14,12 +14,18 @@ public class User {
         this(name, age);
         this.city=city;
     }
+    public User (String email, String password){
+        this.email=email;
+        this.password=password;
+    }
 
     public String name;
     public int age;
     public String city;
     public char gender;
     public static String type = "Human";
+    public String email;
+    public String password;
 
     public static void main(String[] args) {
     User user1 = new User("Masha", 25, "New York");

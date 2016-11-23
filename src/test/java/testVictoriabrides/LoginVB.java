@@ -10,11 +10,14 @@ import victoriabrides.PageObjectLoginVB;
  */
 public class LoginVB extends Browser {
     public PageObjectLoginVB loginVictoriabrides = new PageObjectLoginVB(driver);
+    String email;
+    String password;
+    String url;
 
     @Test
     @Parameters ({"password","email","url"})
     public void loginVBpageSignUp(){
-       // loginVictoriabrides.loginVB(email, password, url);
+       loginVictoriabrides.loginVB(email, password, url);
     }
 
 

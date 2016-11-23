@@ -1,11 +1,13 @@
-package lesson15PageObject;
+package victoriabrides;
 
+import lesson15PageObject.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import victoriabrides.Browser;
 
 
 import java.util.List;
@@ -13,13 +15,9 @@ import java.util.List;
 /**
  * Created by valeria on 23.11.2016.
  */
-public class ActionWithWebelement {
-    /**
-     * Created by Inna_Hrydiakina on 16.09.2016.
-     */
-    public class Actions extends Browser {
+public class ActionWithWebelement extends Browser {
 
-        public Actions(WebDriver driver) {
+        public  ActionWithWebelement (WebDriver driver) {
             this.driver = driver;
         }
 
@@ -84,5 +82,5 @@ public class ActionWithWebelement {
             driver.manage().deleteAllCookies();
             //driver.navigate().refresh();
         }
-    }
+
 }

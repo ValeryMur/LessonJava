@@ -1,4 +1,4 @@
-package lesson15PageObject;
+package victoriabrides;
 
 import org.testng.annotations.Test;
 

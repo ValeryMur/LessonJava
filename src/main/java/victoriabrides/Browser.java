@@ -1,4 +1,4 @@
-package lesson15PageObject;
+package victoriabrides;
 
 import lesson5.Constants;
 import org.openqa.selenium.Alert;
@@ -20,6 +20,7 @@ public class Browser {
         return driver;
     }
 
+    @BeforeTest
     public void setUp() {
         System.out.println("SetUp Chrome");
 //        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
@@ -38,14 +39,14 @@ public class Browser {
         driver.manage().window().maximize();
     }
 
-
+    @AfterTest
     public void tearDown() {
         System.out.println("tearDown");
         //BMProxyManager.stopServer();
         driver.close(); // закрывает окно  браузера, вкладку
         driver.quit(); // закрывает процесс
     }
-
+/*
     @BeforeTest
     @Parameters({"before","proxy"})
     public void beforeTest(@Optional("Test")String before, @Optional("none")String proxy) {
@@ -77,4 +78,5 @@ public class Browser {
             tearDown();
         }
     }
+    */
 }

@@ -59,6 +59,14 @@ public class ActionWithWebelement extends Browser {
             return driver.getCurrentUrl();
         }
 
+        // clear field
+//        @Step
+//        public void clear(By locator) {
+//            WebDriverWait wait = new WebDriverWait(driver, 60);
+//            WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+//            element.clear();
+//        }
+
         // click on element on page
         @Step
         public void click(By locator) {

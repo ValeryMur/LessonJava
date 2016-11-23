@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false">
+    <test name="Login fron sigh up page">
+        <parameter name="email" value="vbvaleramail+35@mail.ru"/>
+        <parameter name="password" value="test_123"/>
+        <parameter name="url" value="https://victoriabrides.com/#auth/login"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="loginVB"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

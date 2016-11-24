@@ -21,5 +21,10 @@ public class LoginVB extends Browser {
        loginVictoriabrides.loginVB(email, password, url);
     }
 
+    @Test
+    @Parameters ({"email", "password", "url"})
+    public void loginVBpopupSignUp(String email, String password, String url){
+        loginVictoriabrides.loginPopupVB(email, password, url);
+    }
 
 }

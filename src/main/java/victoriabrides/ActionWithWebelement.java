@@ -44,6 +44,15 @@ public class ActionWithWebelement extends Browser {
     }*/
 
         @Step
+        public void sleep(int milles)  {
+            try {
+                Thread.sleep(milles);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+
+        @Step
         public boolean isElementPresent(By by) {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));

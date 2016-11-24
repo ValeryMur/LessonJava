@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="false">
+<suite name="Suite 7test LoginVB" parallel="false">
     <test name="Login fron sigh up page">
         <parameter name="email" value="valerytestvb+1@gmail.com"/>
         <parameter name="password" value="test_123"/>
@@ -8,7 +8,13 @@
         <classes>
             <class name="testVictoriabrides.LoginVB">
                 <methods>
+                    <include name="loginVBpageSignUp"></include>
                     <exclude name="loginVBpopupSignUp"></exclude>
+                    <exclude name="loginFemale"></exclude>
+                    <exclude name="loginFemale"></exclude>
+                    <exclude name="wrongEmailLoginVBpopup"></exclude>
+                    <exclude name="wrongPasswordLoginVBpopup"></exclude>
+                    <exclude name="wrongEmailLoginVBpageSignUp"></exclude>
                 </methods>
             </class>
         </classes>
@@ -20,7 +26,67 @@
         <classes>
             <class name="testVictoriabrides.LoginVB">
                 <methods>
-                    <exclude name="loginVBpageSignUp"></exclude>
+                    <include name="loginVBpopupSignUp"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login female">
+        <parameter name="email" value="valerytestvb+210@gmail.com"/>
+        <parameter name="password" value="test_123"/>
+        <parameter name="url" value="https://victoriabrides.com/#auth/login"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="loginFemale"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login on page sign in with wrong email">
+        <parameter name="email" value="vale10@gmail.com"/>
+        <parameter name="password" value="test_123"/>
+        <parameter name="url" value="https://victoriabrides.com/#auth/login"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="wrongEmailLoginVBpopup"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login on page sign in with wrong password">
+        <parameter name="email" value="valerytestvb+1@gmail.com"/>
+        <parameter name="password" value="45678123"/>
+        <parameter name="url" value="https://victoriabrides.com/#auth/login"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="wrongPasswordLoginVBpageSignUp"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login popup in with wrong password">
+        <parameter name="email" value="valerytestvb+1@gmail.com"/>
+        <parameter name="password" value="rf5645123"/>
+        <parameter name="url" value="https://victoriabrides.com/signup/1?partner=0"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="wrongPasswordLoginVBpageSignUp"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login popup in with wrong email">
+        <parameter name="email" value="vale10@gmail.com"/>
+        <parameter name="password" value="test_123"/>
+        <parameter name="url" value="https://victoriabrides.com/signup/1?partner=0"/>
+        <classes>
+            <class name="testVictoriabrides.LoginVB">
+                <methods>
+                    <include name="wrongEmailLoginVBpageSignUp"></include>
                 </methods>
             </class>
         </classes>

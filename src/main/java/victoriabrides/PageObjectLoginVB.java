@@ -19,7 +19,7 @@ public class PageObjectLoginVB extends ActionWithWebelement {
     private By userEmailPopup = By.id("reg_email");
     private By userPasswordPopup = By.id("reg_pass");
     private By loginButtonPopup = By.cssSelector("form[class='lf-cont']>button");
-    private By validationMsg = By.cssSelector("form[class='lf-cont']>div[class='email error']");
+    private By validationMsgPopup = By.cssSelector("form[class='lf-cont']>div[class='email error']");
 
     public void cleanBrowser() {
         deleteCookies();

@@ -34,7 +34,7 @@ public class LoginVB extends Browser {
         Assert.assertTrue(driver.findElement(By.cssSelector(".item:nth-of-type(1)")).isDisplayed(), "Не залогинится");
     }
 
-    @Test
+    @Test 
     @Parameters ({"email", "password", "url"})
     public void loginFemale (String email, String password, String url){
         loginVictoriabrides.loginVB(email, password, url);
@@ -47,27 +47,34 @@ public class LoginVB extends Browser {
     @Parameters ({"email", "password", "url"})
     public void wrongEmailLoginVBpopup(String email, String password, String url){
         loginVictoriabrides.loginPopupVB(email, password, url);
-        Assert.assertTrue(driver.findElement(By.cssSelector("form[class='lf-cont']>div[class='email error']")).isDisplayed(), "Нет валидации на ввод некорректного эмейла");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[class='lf-cont']>div[class='email error']")));
+        //Assert.assertTrue(driver.findElement(By.cssSelector("form[class='lf-cont']>div[class='email error']")).isDisplayed(), "Нет валидации на ввод некорректного эмейла");
     }
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongPasswordLoginVBpopup(String email, String password, String url){
         loginVictoriabrides.loginPopupVB(email, password, url);
-        Assert.assertTrue(driver.findElement(By.cssSelector("form[class='lf-cont']>div[class='email error']")).isDisplayed(), "Нет валидации на ввод некорректного пароля");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[class='lf-cont']>div[class='email error']")));
+       // Assert.assertTrue(driver.findElement(By.cssSelector("form[class='lf-cont']>div[class='email error']")).isDisplayed(), "Нет валидации на ввод некорректного пароля");
     }
 
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongEmailLoginVBpageSignUp(String email, String password, String url){
         loginVictoriabrides.loginVB(email, password, url);
-        Assert.assertTrue(driver.findElement(By.cssSelector(".error")).isDisplayed(), "Нет валидации на ввод некорректного эмейла");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".error")));
+       // Assert.assertTrue(driver.findElement(By.cssSelector(".error")).isDisplayed(), "Нет валидации на ввод некорректного эмейла");
     }
 
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongPasswordLoginVBpageSignUp(String email, String password, String url){
         loginVictoriabrides.loginVB(email, password, url);
-        Assert.assertTrue(driver.findElement(By.cssSelector(".error")).isDisplayed(), "Нет валидации на ввод некорректного пароля");
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".error")));
+       // Assert.assertTrue(driver.findElement(By.cssSelector(".error")).isDisplayed(), "Нет валидации на ввод некорректного пароля");
     }
-
 }

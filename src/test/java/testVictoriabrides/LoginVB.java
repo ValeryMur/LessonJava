@@ -34,7 +34,7 @@ public class LoginVB extends Browser {
         Assert.assertTrue(driver.findElement(By.cssSelector(".item:nth-of-type(1)")).isDisplayed(), "Не залогинится");
     }
 
-    @Test 
+    @Test
     @Parameters ({"email", "password", "url"})
     public void loginFemale (String email, String password, String url){
         loginVictoriabrides.loginVB(email, password, url);

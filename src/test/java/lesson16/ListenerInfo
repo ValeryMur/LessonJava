@@ -1,0 +1,20 @@
+СПОСОБЫ ЛОГИРОВАНИЯ тестов
+
+1. можно логировать записывая каждий шаг вручную, внимание!!! речь идет о import org.slf4j.Logger;
+смотреть class LoggerTest1 (http://toolsqa.wpengine.com/selenium-webdriver/testng-reporters-asserts/)
+ private static Logger logger = LoggerFactory.getLogger(LoggerTest1.class);  //в скобачах пишется название нашего класса
+    @Test
+    public void alala() {
+        System.out.println("Jack");
+        logger.info("we print Jack");
+    }
+
+2. можно записывать логи с помощью  логгера от selenium, нужно создать класс и сделать implements WebDriverEventListener
+и подтянуть все методы, IDEA их сама подтенить, они внутри будет пустые и в них можно писать свою реализацию.
+Что бы наш тест логироватся, в тесте @Test надо прописать: driver = new EventFiringWebDriver(driver).register(new DriverListener());
+где new DriverListener() это тот класс который мы создали (смотреть пример class DriverListener и class LoggerTest);
+
+3. можно записывать логи с помощью гоггера от TestNG,нужно создать класс и сделать extends TestListenerAdapter,
+выписать те методы, которые нам нужны, в документации или ctrl+click нажать по TestListenerAdapterи можно увидеть перечень
+существующих методов, делее пишем в нашем тесте анотацию @Listener({НазваниеНашегоКлассаListener.class}),
+но также можно прописывать этот логгер и  в xmls file(пример xml ExampleListener16, class TestListener и class LoggerTest

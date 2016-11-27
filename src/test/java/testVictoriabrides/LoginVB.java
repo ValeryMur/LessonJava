@@ -1,6 +1,8 @@
 package testVictoriabrides;
 
+import listenerLesson16.DriverListener;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -22,6 +24,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void loginVBpageSignUp(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
        loginVictoriabrides.loginVB(email, password, url);
         Assert.assertTrue(driver.findElement(By.cssSelector(".item:nth-of-type(1)")).isDisplayed(), "Не залогинится");
         // By.xpath .//*[@class='b-main_menu b-main_menu_region']/li[1]/a
@@ -30,6 +33,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void loginVBpopupSignUp(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginPopupVB(email, password, url);
         Assert.assertTrue(driver.findElement(By.cssSelector(".item:nth-of-type(1)")).isDisplayed(), "Не залогинится");
     }
@@ -37,6 +41,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void loginFemale (String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginVB(email, password, url);
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlContains("#wizard/moderation"));
@@ -46,6 +51,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongEmailLoginVBpopup(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginPopupVB(email, password, url);
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[class='lf-cont']>div[class='email error']")));
@@ -54,6 +60,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongPasswordLoginVBpopup(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginPopupVB(email, password, url);
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[class='lf-cont']>div[class='email error']")));
@@ -63,6 +70,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongEmailLoginVBpageSignUp(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginVB(email, password, url);
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".error")));
@@ -72,6 +80,7 @@ public class LoginVB extends Browser {
     @Test
     @Parameters ({"email", "password", "url"})
     public void wrongPasswordLoginVBpageSignUp(String email, String password, String url){
+        driver = new EventFiringWebDriver(driver).register(new DriverListener());
         loginVictoriabrides.loginVB(email, password, url);
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".error")));

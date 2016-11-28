@@ -33,30 +33,31 @@ public class PageObjectLoginVB extends ActionWithWebelement {
     public void openLoginPage(String url){
         get("https://victoriabrides.com/#auth/login");
     }
-
     @Step
     public void typeEmail(String email){
         type(userEmail, email);
     }
-
     @Step
     public void typePassword(String password){
         type(userPassword, password);
     }
-
     @Step
     public void clickLoginButton(){
         click(loginButton);
     }
+    @Step
     public void clickSignInButton(){
         click(signinButtonPopup);
     }
+    @Step
     public void typeEmailPopup(String email){
         type(userEmailPopup, email);
     }
+    @Step
     public void typePasswordPopup(String password){
         type(userPasswordPopup, password);
     }
+    @Step
     public void clickLoginButtonPopup(){
         click(loginButtonPopup);
     }
@@ -79,7 +80,4 @@ public class PageObjectLoginVB extends ActionWithWebelement {
         typePasswordPopup(password);
         clickLoginButtonPopup();
     }
-
-    //проверки что заалогинилась делать в тесте или в pageObject???
-
 }

@@ -16,10 +16,10 @@ public class TypesDatas {
     или int x, y = 5;
     timestep-число с одной и той же дтой везде
     */
-    byte getByte, setByte;
+    /*byte getByte, setByte;
     float usd = 31.24f; //обязательна вконце f иначе считается как double
     char symbol = 1067;
-    char sumbol = 'Ы';
+    char sumbol = 'Ы';*/
 
     String myString = new String ("Text");
     String muString = "Text";

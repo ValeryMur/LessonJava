@@ -19,7 +19,7 @@ public class DriverListener implements WebDriverEventListener {
     @Override
     public void beforeNavigateTo(String s, WebDriver webDriver) {
 
-        logger.info("Переход на" + s + "");
+        logger.info("Open url" + s + "");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class DriverListener implements WebDriverEventListener {
 
     @Override
     public void beforeClickOn(WebElement webElement, WebDriver webDriver) {
-        logger.info("Клик по елементу - " + webElement.toString().substring(webElement.toString().indexOf("> ")+2));
+        logger.info("Click on element - " + webElement.toString().substring(webElement.toString().indexOf("> ")+2));
         //logger.debug("Should click " + webElement.getTagName());
 
     }

@@ -18,3 +18,12 @@
 выписать те методы, которые нам нужны, в документации или ctrl+click нажать по TestListenerAdapterи можно увидеть перечень
 существующих методов, делее пишем в нашем тесте анотацию @Listener({НазваниеНашегоКлассаListener.class}),
 но также можно прописывать этот логгер и  в xmls file(пример xml ExampleListener16, class TestListener и class LoggerTest
+
+4. Allure report, launch throw cmd:
+   Чтобы запустить через консоль Allure, нужно и cmd перейти в папку с проектом (cd ideaprojects\javalesson) и запускать следующие команды в cmd:
+   mvn clean
+   mvn test -Dsuite-xmls/AllureSuit.xml  (указываем путь к нашему xml файлу)
+   mvn site
+
+То методы которые хотим выводить в отчете, помечаем @Step, непосредственно в самом уже тесте делаем ссылку на тот класс
+где у нас указаны аннотации @Step TryAlurePage allurePage = new TryAlurePage(); (смотреть пример class TryAllure и class TryAlurePage)

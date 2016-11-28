@@ -1,13 +1,11 @@
 package victoriabrides;
 
-import lesson15PageObject.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import victoriabrides.Browser;
 
 
 import java.util.List;
@@ -22,7 +20,6 @@ public class ActionWithWebelement extends Browser {
         }
 
         // get web page
-        @Step
         public void get(String url) {
             if (url.equalsIgnoreCase("")) {
                 Assert.assertTrue(false, "Empty url");
@@ -43,7 +40,6 @@ public class ActionWithWebelement extends Browser {
         return false;
     }*/
 
-        @Step
         public void sleep(int milles)  {
             try {
                 Thread.sleep(milles);
@@ -52,7 +48,6 @@ public class ActionWithWebelement extends Browser {
             }
         }
 
-        @Step
         public boolean isElementPresent(By by) {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
@@ -77,7 +72,6 @@ public class ActionWithWebelement extends Browser {
 //        }
 
         // click on element on page
-        @Step
         public void click(By locator) {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -85,7 +79,6 @@ public class ActionWithWebelement extends Browser {
         }
 
         // type with text in element
-        @Step
         public void type(By locator, String text) {
             WebDriverWait wait = new WebDriverWait(driver, 60);
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -94,7 +87,6 @@ public class ActionWithWebelement extends Browser {
         }
 
         //чистит куки
-        @Step
         public void deleteCookies() {
             driver.manage().deleteAllCookies();
             //driver.navigate().refresh();

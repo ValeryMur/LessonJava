@@ -2,6 +2,7 @@ package victoriabrides;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.yandex.qatools.allure.annotations.Step;
 
 /**
  * Created by valeria on 23.11.2016.
@@ -21,21 +22,29 @@ public class PageObjectLoginVB extends ActionWithWebelement {
     private By loginButtonPopup = By.cssSelector("form[class='lf-cont']>button");
     private By validationMsgPopup = By.cssSelector("form[class='lf-cont']>div[class='email error']");
 
+    @Step
     public void cleanBrowser() {
         deleteCookies();
     }
     public  void openSignUp1(String url){
         get("https://victoriabrides.com/signup/1?partner=0&subid=iuh");
     }
+    @Step
     public void openLoginPage(String url){
         get("https://victoriabrides.com/#auth/login");
     }
+
+    @Step
     public void typeEmail(String email){
         type(userEmail, email);
     }
+
+    @Step
     public void typePassword(String password){
         type(userPassword, password);
     }
+
+    @Step
     public void clickLoginButton(){
         click(loginButton);
     }
@@ -52,6 +61,7 @@ public class PageObjectLoginVB extends ActionWithWebelement {
         click(loginButtonPopup);
     }
 
+    @Step
     public void loginVB(String email, String password, String url){
         cleanBrowser();
         openLoginPage(url);
@@ -60,6 +70,7 @@ public class PageObjectLoginVB extends ActionWithWebelement {
         clickLoginButton();
     }
 
+    @Step
     public void loginPopupVB(String email, String password, String url){
         cleanBrowser();
         openSignUp1(url);

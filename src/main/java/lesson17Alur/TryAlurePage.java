@@ -1,9 +1,9 @@
 package lesson17Alur;
 
-import lesson15PageObject.Step;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Step;
 
 /**
  * Created by valeria on 28.11.2016.
@@ -11,12 +11,13 @@ import org.testng.annotations.Test;
 public class TryAlurePage {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+  /*  //зачем писать метод test1 если у нас есть класс class TryAllure где мы вызываем все степы ниже
     @Test
     public void test1() {
         step1();
         step2();
         step3();
-    }
+    }*/
 
     @Step
     public void step1() {

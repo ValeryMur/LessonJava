@@ -1,11 +1,13 @@
 package testVictoriabrides;
 
+import lesson16.TestListener;
 import listenerLesson16.DriverListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import victoriabrides.Browser;
@@ -14,6 +16,7 @@ import victoriabrides.PageObjectLoginVB;
 /**
  * Created by ASUS PC on 23.11.2016.
  */
+@Listeners({TestListener.class})
 public class LoginVB extends Browser {
     public PageObjectLoginVB loginVictoriabrides = new PageObjectLoginVB(driver);
     /*

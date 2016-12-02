@@ -44,10 +44,10 @@ public class User {
 }
 
 
-//    @Override
-//    public String toString(){
-//        return name+":"+city+":"+gender;
-//    }
+    @Override
+         public String toString(){
+         return name+":"+city+":"+gender;// дописать логин и пароль
+   }
 
 
 

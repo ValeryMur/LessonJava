@@ -1,5 +1,6 @@
 package lesson17Alur;
 
+import lesson6.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
@@ -34,5 +35,27 @@ public class TryAlurePage {
         System.out.println("lala3");
         logger.info("step3 ok");
     }
+
+//    @Step
+//    public void step3() {
+//        logger.info("step3 in progress");
+//    }
+
+    @Step("Залогиниться с имейлом {0} и паролем {1}")
+    public void login(String email, String password){
+        logger.info("step LOGIN");
+    }
+
+    @Step("this)Registration {0}")
+    public void  registration(User user){
+        logger.info("reg user: "+user);
+
+    }
+
+    @Override
+    public String toString(){
+        return "TryAllurePageClass!!!";
+    }
+
 
 }

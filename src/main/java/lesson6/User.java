@@ -46,7 +46,7 @@ public class User {
 
     @Override
          public String toString(){
-         return name+":"+city+":"+gender;// дописать логин и пароль
+         return name+":"+city+":"+gender+" : "+email+" : "+password;
    }
 
 

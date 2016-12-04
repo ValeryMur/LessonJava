@@ -54,7 +54,7 @@ public class LoginTest {
         fireAllureParameterVariable("Browser","Chrome");
         fireAllureParameterVariable("URL","https://kismia.com/");
         fireAllureParameterVariable("User",userForTest.toString());
-        fireAllureParameterVariable("BOs","Wind");
+        fireAllureParameterVariable("IOs","Wind");
         RegForm1 regForm = new RegForm1(driver);
        get("https://kismia.com/");
         makeScreenshot("BeforeLogin screen");

@@ -2,11 +2,20 @@ package victoriabrides;
 
 import lesson5.Constants;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
+import ru.yandex.qatools.allure.Allure;
+import ru.yandex.qatools.allure.annotations.Attachment;
+import ru.yandex.qatools.allure.events.TestCaseEvent;
+import ru.yandex.qatools.allure.model.Parameter;
+import ru.yandex.qatools.allure.model.ParameterKind;
+import ru.yandex.qatools.allure.model.TestCaseResult;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 
@@ -79,4 +88,27 @@ public class Browser {
         }
     }
     */
+
+    @Attachment(value="{0}", type ="image/png")
+    public byte[] makeScreenshot(String name) throws IOException {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
+
+    private static Parameter parameter(String name, String value) {
+        Parameter param = new Parameter();
+        param.setName(name);
+        param.setValue(value);
+        param.setKind(ParameterKind.ENVIRONMENT_VARIABLE);
+        return param;
+    }
+
+    public static void fireAllureParameterVariable(final String name, final String value) {
+        Allure.LIFECYCLE.fire(new TestCaseEvent() {
+            @Override
+            public void process(TestCaseResult testCaseResult) {
+                testCaseResult.getParameters().add(parameter(name, value));
+            }
+        });
+    }
+
 }

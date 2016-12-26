@@ -14,13 +14,14 @@
 Что бы наш тест логироватся, в тесте @Test надо прописать: driver = new EventFiringWebDriver(driver).register(new DriverListener());
 где new DriverListener() это тот класс который мы создали (смотреть пример class DriverListener и class LoggerTest);
 
-3. можно записывать логи с помощью гоггера от TestNG,нужно создать класс и сделать extends TestListenerAdapter,
+3. можно записывать логи с помощью логгера от TestNG,нужно создать класс и сделать extends TestListenerAdapter,
 выписать те методы, которые нам нужны, в документации или ctrl+click нажать по TestListenerAdapterи можно увидеть перечень
 существующих методов, делее пишем в нашем тесте анотацию @Listener({НазваниеНашегоКлассаListener.class}),
 но также можно прописывать этот логгер и  в xmls file(пример xml ExampleListener16, class TestListener и class LoggerTest
 
 4. Allure report, launch throw cmd:
-   Чтобы запустить через консоль Allure, нужно и cmd перейти в папку с проектом (cd ideaprojects\javalesson) и запускать следующие команды в cmd:
+   Чтобы запустить через консоль Allure, нужно и cmd перейти в папку с проектом (cd ideaprojects\javalesson) и запускать следующие
+   команды в cmd:
    mvn clean
    mvn test -Dsuite-xmls/AllureSuit.xml  (указываем путь к нашему xml файлу)
    mvn site

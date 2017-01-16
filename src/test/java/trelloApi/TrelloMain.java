@@ -34,7 +34,7 @@ public class TrelloMain {
         return new URIBuilder().setScheme(scheme).setHost(host).setParameter("key", KEY).setParameter("token", TOKEN);
     }
 
-    public String getLists()throws URISyntaxException, IOException{
+    public String getBords()throws URISyntaxException, IOException{
         //https://api.trello.com/1/boards/4eea4ffc91e31d1746000046?lists=open&list_fields=name&fields=name,desc&key=[application_key]&token=[optional_auth_token]
         URI uri = getUriBuilder().setPath("/1/boards/"+BOARD_ID).setParameter("lists", "open").setParameter("list_fields", "name").setParameter("fields", "name,desc").build();
         Request request = new Request.Builder().get().url(uri.toURL()).build();
@@ -44,8 +44,8 @@ public class TrelloMain {
     }
 
     @Test
-    public void getListTest() throws URISyntaxException, IOException {
-        getLists();
+    public void getBoardTest() throws URISyntaxException, IOException {
+        getBords();
     }
 
 }

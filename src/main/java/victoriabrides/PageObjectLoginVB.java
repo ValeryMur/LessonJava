@@ -27,11 +27,11 @@ public class PageObjectLoginVB extends ActionWithWebelement {
         deleteCookies();
     }
     public  void openSignUp1(String url){
-        get("https://victoriabrides.com/signup/1?partner=0&subid=iuh");
+        driver.get("https://victoriabrides.com/signup/1?partner=0&subid=iuh");
     }
     @Step
     public void openLoginPage(String url){
-        get("https://victoriabrides.com/#auth/login");
+        driver.get("https://victoriabrides.com/#auth/login");
     }
     @Step
     public void typeEmail(String email){

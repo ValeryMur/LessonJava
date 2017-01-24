@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MultTest" parallel="tests">
+<test name="MultiplyTestBr">
+    <classes>
+        <class name="testMultyplyBrowser.Testbr1">
+        </class>
+    </classes>
+</test>
+    <test name="MultiplyTestBr1">
+    <classes>
+        <class name="testMultyplyBrowser.Testbr2">
+        </class>
+    </classes>
+    </test>
+    <test name="MultiplyTestBr2">
+    <classes>
+        <class name="testMultyplyBrowser.Testbr3">
+        </class>
+    </classes>
+</test>
+</suite>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite LoginVB" parallel="false">
+    <test name="Login VB">
+        <classes>
+            <class name="signIn.SignInVBDataprovider">
+                <methods>
+                <include name="signInVB"></include>
+            </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login VB">
+        <classes>
+            <class name="signIn.SignInVBDataprovider">
+                <methods>
+                    <include name="signInPageVBInvalidData"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login VB">
+        <classes>
+            <class name="signIn.SignInVBDataprovider">
+                <methods>
+                    <include name="signInPopupVBInvalidData"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

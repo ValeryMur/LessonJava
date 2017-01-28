@@ -1,8 +1,8 @@
 package core;
 
-import API.responsesJson.GetGeoResponse;
-import API.responsesJson.PostAuthResponse;
-import com.jdbc.PixelLog;
+//import API.responsesJson.GetGeoResponse;
+//import API.responsesJson.PostAuthResponse;
+//import com.jdbc.PixelLog;
 import ru.yandex.qatools.allure.annotations.Attachment;
 
 /**
@@ -17,25 +17,25 @@ public class AllureAttachments {
         return text;
     }
 
-    @Attachment(value = "{1}", type = "text/plain")
-    public static PixelLog pixelLogAttachment(PixelLog pixelLog, String name) {
-        System.out.println("(" + name + "): ");
-        System.out.println(pixelLog);
-        return pixelLog;
-    }
-
-    @Attachment(value = "{1}", type = "text/plain")
-    public static PostAuthResponse postAuthResponseAttachment (PostAuthResponse postAuthResponse, String name) {
-        System.out.println("(" + name + "): ");
-        System.out.println(postAuthResponse);
-        return postAuthResponse;
-    }
-
-    @Attachment(value = "{1}", type = "text/plain")
-    public static GetGeoResponse getGeoResponse (GetGeoResponse getGeoResponse, String name) {
-        System.out.println("(" + name + "): ");
-        System.out.println(getGeoResponse);
-        return getGeoResponse;
-    }
+//    @Attachment(value = "{1}", type = "text/plain")
+//    public static PixelLog pixelLogAttachment(PixelLog pixelLog, String name) {
+//        System.out.println("(" + name + "): ");
+//        System.out.println(pixelLog);
+//        return pixelLog;
+//    }
+//
+//    @Attachment(value = "{1}", type = "text/plain")
+//    public static PostAuthResponse postAuthResponseAttachment (PostAuthResponse postAuthResponse, String name) {
+//        System.out.println("(" + name + "): ");
+//        System.out.println(postAuthResponse);
+//        return postAuthResponse;
+//    }
+//
+//    @Attachment(value = "{1}", type = "text/plain")
+//    public static GetGeoResponse getGeoResponse (GetGeoResponse getGeoResponse, String name) {
+//        System.out.println("(" + name + "): ");
+//        System.out.println(getGeoResponse);
+//        return getGeoResponse;
+//    }
 
 }

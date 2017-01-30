@@ -188,6 +188,13 @@
             <version>2.1.0</version>
         </dependency>
 
+        <!-- Yandex AShot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
     </dependencies>
 
 </project>
